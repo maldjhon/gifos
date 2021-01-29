@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import "./variables.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.styleButton{
+    border: solid;
+    border-width: 1px;
+    border-color: $baseColor;
+    background-color: $whiteColor;
+    padding: 0;
+    outline: none;
+}
+
+#containerSearchGifos{
+    display: flex;
+    flex-direction: column;
+    .linkHome{
+        align-self: flex-end;
+        margin: 64px 39px 0px 0px;
+        .closed{
+            color: $baseColor;
+        }
+    }
+    .contaGif{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 78px 28px 22px;
+        .buttonsCard{
+            width: 40px;
+            height: 40px;
+            display: none;
+            @extend .styleButton;
+            i{
+                color: $baseColor;
+            }
+            &:hover{
+                background-color: $baseColor;
+                & > i{
+                    color: $whiteColor;
+                }
+            }
+        }
+        .containerImg{
+            line-height: 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .informationGif{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 14px 29px 0px;
+        .containerLeft{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 50%;
+            .user{
+                font-family: 'Roboto', sans-serif;
+                font-size: 15px;
+                font-weight: 100;
+            }
+            .title{
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .containerRigth{
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+            .buttonsGif{
+                width: 36px;
+                height: 36px;
+                border: solid;
+                border-width: 1px;
+                padding: 0;
+                outline: none;
+                border-radius: 6px;
+                opacity: 0.7;
+                background-color: $whiteColor;
+                border-color: $borderButtonColor;
+                &.likeButton{
+                    margin: 0px 21px 0px 0px;
+                }
+                i{
+                    font-size: 20px;
+                    margin: 5px;
+                    color: $baseColor;
+                }
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    #containerSearchGifos{
+        .linkHome{
+            margin: 64px 64px 0px 0px;
+            .closed{
+                font-size: 25px;
+            }
+        }
+        .contaGif{
+            margin: 78px 0px 22px;
+        }
+        .informationGif{
+            margin: 0px auto;
+            width: 480px;
+        }
+    }
+
+}
+
+@media (min-width: 1024px){
+    #containerSearchGifos{
+        .linkHome{
+            margin: 66.4px 278.4px 0px 0px;
+            .closed{
+                font-size: 30px;
+            }
+        }
+        .contaGif{
+            .buttonsCard{
+                display: inline-block;
+            }
+            .containerImg{
+                margin: 0px 25px;
+            }
+        }
+    }
+}

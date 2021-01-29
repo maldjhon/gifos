@@ -1,0 +1,851 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+/*---------- Colors----------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.standardText, .containerTredingGifos .containerParagraph .paragraph, .containerHeader .logo .logoTitle {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.linkTextMobile, .containerHeader .logo .linkBarMobile .link {
+  font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.linkTextDesktop, .containerTredingGifos h4, #containerSearchGifos .seeMore, .containerTitle h1, .containerHeader .logo .linkBarDesktop {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.styleButton, .containerTredingGifos .containerCard .buttonsCard, .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif, #containerSearchGifos .seeMore, #containerSearchGifos #searchGifos .contaGif .buttonsGif {
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: #37383C;
+  padding: 0;
+  outline: none;
+}
+
+.robotoRegularText {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.containerHeader {
+  background-color: #000000;
+  padding: 5px 0px 0px;
+}
+.containerHeader .logo {
+  background: #37383C;
+  display: flex;
+  justify-content: space-between;
+  padding: 29px 26px 17.2px 22px;
+}
+.containerHeader .logo .containerLogoDesktop {
+  display: none;
+  position: relative;
+}
+.containerHeader .logo .containerLogoDesktop a {
+  position: absolute;
+}
+.containerHeader .logo .containerLogoMobile {
+  position: relative;
+}
+.containerHeader .logo .containerLogoMobile a {
+  position: absolute;
+}
+.containerHeader .logo .containerLogoMobile a .logoMobile {
+  width: 48.8px;
+}
+.containerHeader .logo .logoTitle {
+  background: #37383C;
+  position: absolute;
+  top: 52px;
+  left: 30px;
+  height: 15.4px;
+}
+.containerHeader .logo .bars {
+  position: absolute;
+  visibility: hidden;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 35px;
+}
+.containerHeader .logo .bars:checked ~ i.menu {
+  display: none;
+}
+.containerHeader .logo .bars:checked ~ i.closed {
+  display: block;
+}
+.containerHeader .logo .bars:checked ~ .linkBarMobile {
+  animation-name: move;
+  animation-duration: 1s;
+  left: 0;
+  right: 0;
+}
+.containerHeader .logo .bars:not(:checked) ~ .linkBarMobile {
+  left: -100%;
+}
+.containerHeader .logo .menuBar {
+  position: absolute;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 35px;
+}
+.containerHeader .logo i {
+  height: 100%;
+  align-self: center;
+}
+.containerHeader .logo i.closed {
+  display: none;
+  font-size: 20px;
+  color: white;
+}
+.containerHeader .logo i.menu {
+  font-size: 17px;
+  color: white;
+}
+.containerHeader .logo .linkBarDesktop {
+  display: none;
+  font-size: 13px;
+}
+.containerHeader .logo .linkBarDesktop .link {
+  text-decoration: none;
+  color: white;
+}
+.containerHeader .logo .linkBarDesktop .link:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #5ED7C6;
+}
+.containerHeader .logo .linkBarDesktop .link:active {
+  color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .link:active::after {
+  display: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton {
+  position: relative;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: #37383C;
+  padding: 0;
+  outline: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .horizontal {
+  background-color: #37383C;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .vertical {
+  background-color: #37383C;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active {
+  background-color: #9CAFC3;
+  border-color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .horizontal {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .vertical {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .horizontal {
+  position: absolute;
+  width: 18px;
+  height: 1px;
+  background-color: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .vertical {
+  position: absolute;
+  width: 1.5px;
+  height: 18px;
+  background-color: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.containerHeader .logo .linkBarMobile {
+  background-color: #000000;
+  position: absolute;
+  top: 96.31px;
+  height: 100%;
+  z-index: 1;
+}
+.containerHeader .logo .linkBarMobile .link {
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+.containerHeader .logo .linkBarMobile .link.after::after {
+  content: "";
+  display: block;
+  width: 41px;
+  height: 0.1px;
+  margin: 11px auto;
+  background-color: #FFFFFF;
+  opacity: 0.4;
+}
+.containerHeader .logo .linkBarMobile .link:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #5ED7C6;
+  width: 41px;
+  margin: 11px auto;
+  opacity: 0.4;
+}
+.containerHeader .logo .linkBarMobile .link:active {
+  color: #9CAFC3;
+}
+.containerHeader .logo .linkBarMobile .link#nocturnalMobile {
+  margin: 32px 0px 0px;
+}
+.containerHeader .logo .linkBarMobile .link#favoritesMobile {
+  margin: 2.9px 0px 0px;
+}
+.containerHeader .logo .linkBarMobile .link#gifosMobile {
+  margin: 2.9px 0px 0px;
+}
+
+.containerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 45px 0px;
+  background-color: #37383C;
+}
+.containerTitle img {
+  width: 24px;
+  height: 22px;
+  margin: 5px 0px 7px;
+}
+.containerTitle h1 {
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+.containerTitle h1 span {
+  color: #5ED7C6;
+}
+
+#containerSearchGifos {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #37383C;
+  justify-content: space-evenly;
+}
+#containerSearchGifos #searchGifos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#containerSearchGifos #searchGifos .contaGif {
+  position: relative;
+  display: flex;
+  margin: 0px 10px 25px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif {
+  width: 20px;
+  height: 20px;
+  display: none;
+  position: absolute;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 2;
+  right: 0;
+  background-color: white;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.deleteButton {
+  margin: 10px 55px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.downloadButton {
+  margin: 10px 30px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.expandButton {
+  margin: 10px 5px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif i {
+  font-size: 11px;
+  color: #572EE5;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif i.fa-expand-alt {
+  padding: 4px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif:hover {
+  opacity: 1;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif {
+  display: none;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: initial;
+  bottom: 0;
+  left: 0;
+  margin: 0px 35px 6px 13px;
+  z-index: 2;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif .user {
+  font-size: 9px;
+  font-weight: 300;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif .title {
+  margin: 6px 0px 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+#containerSearchGifos #searchGifos .contaGif .containerImg {
+  position: relative;
+  width: 156px;
+  height: 120px;
+}
+#containerSearchGifos #searchGifos .contaGif .containerImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+#containerSearchGifos #searchGifos .contaGif:hover::before {
+  content: "";
+  width: 156px;
+  height: 120px;
+  background-color: #572EE5;
+  opacity: 0.7;
+  z-index: 1;
+  position: absolute;
+}
+#containerSearchGifos #searchGifos .contaGif:hover > .buttonsGif {
+  display: block;
+}
+#containerSearchGifos #searchGifos .contaGif:hover > .informationGif {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#containerSearchGifos .seeMore {
+  width: 127px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 48px 0px 79px;
+}
+#containerSearchGifos .seeMore:hover {
+  background-color: white;
+  color: #000000;
+}
+
+.noSearch {
+  display: none;
+  background-color: #37383C;
+  flex-direction: column;
+  align-items: center;
+}
+.noSearch .noSearchIcon {
+  width: 100px;
+  height: 100px;
+  margin: 36px 0px 23.7px 0px;
+}
+.noSearch .otherSearch {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 25px;
+  width: 300px;
+  margin: 0px 0px 46.7px 0px;
+}
+
+.containerTredingGifos {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 0px 0px 82px;
+  background-color: #222326;
+}
+.containerTredingGifos h4 {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 46px 0px 7px;
+}
+.containerTredingGifos .containerParagraph {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 21px 32px;
+  padding: 0px 2px;
+}
+.containerTredingGifos .containerParagraph .paragraph {
+  font-size: 16px;
+  color: white;
+  line-height: 23px;
+  font-weight: 100;
+}
+.containerTredingGifos .containerParagraph .paragraph.look {
+  padding: 0px 5px 0px 0px;
+}
+.containerTredingGifos .containerCard {
+  display: flex;
+  margin: 0px 0px 0px 22px;
+  position: relative;
+  height: 200px;
+  overflow: auto;
+}
+.containerTredingGifos .containerCard #containerGifsTreding {
+  display: flex;
+  position: absolute;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif {
+  width: 25px;
+  height: 25px;
+  display: none;
+  position: absolute;
+  border-radius: 6px;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 2;
+  background-color: white;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.likeButton {
+  margin: 10px 102px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.downloadButton {
+  margin: 10px 67px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.expandButton {
+  margin: 10px 32px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif i {
+  margin: 5px;
+  font-size: 14px;
+  color: #572EE5;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif:hover {
+  opacity: 1;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif {
+  display: none;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: initial;
+  bottom: 0;
+  left: 0;
+  margin: 0px 35px 6px 13px;
+  z-index: 2;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif .user {
+  font-size: 15px;
+  font-weight: 300;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif .title {
+  margin: 6px 0px 0px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg {
+  position: relative;
+  width: 260px;
+  height: 200px;
+  margin: 0px 22px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover::before {
+  content: "";
+  width: 260px;
+  height: 200px;
+  background-color: #572EE5;
+  opacity: 0.7;
+  z-index: 1;
+  position: absolute;
+  margin: 0px 22px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover > .buttonsGif {
+  display: block;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover > .informationGif {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.containerTredingGifos .containerCard .buttonsCard {
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+}
+.containerTredingGifos .containerCard .buttonsCard.leftButton {
+  left: 0;
+}
+.containerTredingGifos .containerCard .buttonsCard.rightButton {
+  right: 0;
+}
+.containerTredingGifos .containerCard .buttonsCard i {
+  color: white;
+}
+.containerTredingGifos .containerCard .buttonsCard:hover {
+  background-color: white;
+}
+.containerTredingGifos .containerCard .buttonsCard:hover > i {
+  color: #37383C;
+}
+
+.containerFooter {
+  background-color: #37383C;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 47px 0px 0px;
+}
+.containerFooter .footerLeft span {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin: 0px 0px 22px;
+  color: white;
+}
+.containerFooter .footerLeft .margin {
+  margin: 0px 19px 0px 0px;
+}
+.containerFooter .footerLeft a i {
+  opacity: 0.2;
+  color: white;
+  font-size: 20px;
+}
+.containerFooter .footerLeft a i:hover {
+  color: white;
+  opacity: 1;
+}
+.containerFooter .footerRight {
+  margin: 46px 0px 23px;
+}
+.containerFooter .footerRight span {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+.containerFooter .end {
+  width: 100%;
+  height: 5px;
+  background-color: #000000;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .containerHeader .logo {
+    padding: 18px 70px 12.9px;
+  }
+  .containerHeader .logo .containerLogoMobile {
+    display: none;
+  }
+  .containerHeader .logo .containerLogoDesktop {
+    display: block;
+  }
+  .containerHeader .logo .containerLogoDesktop a .logoDesktop {
+    width: 59.1px;
+    left: -266px;
+  }
+  .containerHeader .logo .logoTitle {
+    font-size: 18px;
+    top: 48px;
+    left: 82px;
+    height: 20.1px;
+  }
+  .containerHeader .logo .bars {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo .menuBar {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo i.menu {
+    font-size: 22px;
+  }
+  .containerHeader .logo i.closed {
+    font-size: 29px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    top: 92.18px;
+  }
+
+  .containerTitle {
+    padding: 0px 95px;
+  }
+  .containerTitle img {
+    margin: 11px 0px 8px;
+  }
+  .containerTitle h1 {
+    font-size: 25px;
+  }
+
+  #containerSearchGifos {
+    padding: 0px 100px;
+  }
+  #containerSearchGifos #searchGifos .contaGif {
+    margin: 0px 15px 31px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif {
+    width: 32px;
+    height: 32px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.deleteButton {
+    margin: 10px 90px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.downloadButton {
+    margin: 10px 50px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.expandButton {
+    margin: 10px 10px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif i {
+    font-size: 20px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif i.fa-expand-alt {
+    padding: 6px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .informationGif .user {
+    font-size: 15px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .informationGif .title {
+    font-size: 16px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .containerImg {
+    width: 260px;
+    height: 200px;
+  }
+  #containerSearchGifos #searchGifos .contaGif:hover::before {
+    width: 260px;
+    height: 200px;
+  }
+
+  .noSearch .noSearchIcon {
+    margin: 109.3px 0px 23.7px 0px;
+  }
+  .noSearch .otherSearch {
+    width: 431px;
+    margin: 0px 0px 137px 0px;
+  }
+
+  .containerTredingGifos {
+    padding: 0px 0px 182px;
+  }
+  .containerTredingGifos h4 {
+    margin: 67px 0px 12px;
+    font-size: 25px;
+  }
+  .containerTredingGifos .containerParagraph {
+    margin: 0px 0px 53px;
+    padding: 0px;
+  }
+  .containerTredingGifos .containerParagraph .paragraph {
+    font-size: 18px;
+  }
+
+  .containerFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 49.5px 0px 0px;
+  }
+  .containerFooter .footerLeft {
+    display: flex;
+    margin: 0px 0px 0px 80px;
+  }
+  .containerFooter .footerLeft span {
+    margin: 0px 19px 0px 0px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 80px 0px 0px;
+  }
+  .containerFooter .end {
+    margin: 51.5px 0px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .containerHeader .logo {
+    padding: 18px 156px 12.9px;
+  }
+  .containerHeader .logo .containerLogoDesktop a .logoDesktop {
+    left: -286px;
+  }
+  .containerHeader .logo .logoTitle {
+    left: 168px;
+  }
+  .containerHeader .logo .bars:checked ~ i.closed {
+    display: none;
+  }
+  .containerHeader .logo i.menu {
+    display: none;
+  }
+  .containerHeader .logo i.closed {
+    display: none;
+  }
+  .containerHeader .logo .linkBarDesktop {
+    display: flex;
+    align-items: center;
+  }
+  .containerHeader .logo .linkBarDesktop .link {
+    text-transform: uppercase;
+  }
+  .containerHeader .logo .linkBarDesktop .link#nocturnalDesktop {
+    margin: 0px 41.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#favoritesDesktop {
+    margin: 0px 50px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#gifosDesktop {
+    margin: 0px 59.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    display: none;
+  }
+
+  .containerTitle {
+    padding: 11px 408px 0px;
+  }
+
+  #containerSearchGifos {
+    padding: 0px 156px;
+  }
+  #containerSearchGifos #searchGifos .contaGif {
+    margin: 0px 17px 31px 0px;
+  }
+
+  .noSearch .noSearchIcon {
+    width: 150px;
+    height: 150px;
+    margin: 50px 0px 29px 0px;
+  }
+  .noSearch .otherSearch {
+    margin: 0px 0px 149px 0px;
+  }
+
+  .containerTredingGifos .containerCard {
+    margin: 0px 94px 0px;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 275px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif {
+    width: 32px;
+    height: 32px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonInit {
+    margin: 10px 94px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonInit {
+    margin: 10px 52px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonInit {
+    margin: 10px 10px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonMiddle {
+    margin: 10px 122px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonMiddle {
+    margin: 10px 80px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonMiddle {
+    margin: 10px 38px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonEnd {
+    margin: 10px 94px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonEnd {
+    margin: 10px 52px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonEnd {
+    margin: 10px 10px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif i {
+    font-size: 18px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif {
+    margin: 0px 18px 51px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif.middle {
+    margin: 0px 46px 51px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg {
+    width: 357px;
+    height: 275px;
+    margin: 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg.middle {
+    margin: 0px 28px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover::before {
+    width: 357px;
+    height: 275px;
+    margin: 0;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif.contaGifMiddle:hover::before {
+    margin: 0px 28px 0px 0px;
+  }
+  .containerTredingGifos .containerCard .buttonsCard {
+    display: block;
+  }
+
+  .containerFooter .footerLeft {
+    margin: 0px 0px 0px 156px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 158px 0px 0px;
+  }
+}
+
+/*# sourceMappingURL=myGifsDarkMode.css.map */

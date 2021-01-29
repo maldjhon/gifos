@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+/*---------- Colors----------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.styleButton, #containerSearchGifos .contaGif .buttonsCard {
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  background-color: white;
+  padding: 0;
+  outline: none;
+}
+
+#containerSearchGifos {
+  display: flex;
+  flex-direction: column;
+}
+#containerSearchGifos .linkHome {
+  align-self: flex-end;
+  margin: 64px 39px 0px 0px;
+}
+#containerSearchGifos .linkHome .closed {
+  color: #572EE5;
+}
+#containerSearchGifos .contaGif {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 78px 28px 22px;
+}
+#containerSearchGifos .contaGif .buttonsCard {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+#containerSearchGifos .contaGif .buttonsCard i {
+  color: #572EE5;
+}
+#containerSearchGifos .contaGif .buttonsCard:hover {
+  background-color: #572EE5;
+}
+#containerSearchGifos .contaGif .buttonsCard:hover > i {
+  color: white;
+}
+#containerSearchGifos .contaGif .containerImg {
+  line-height: 0;
+}
+#containerSearchGifos .contaGif .containerImg img {
+  width: 100%;
+}
+#containerSearchGifos .informationGif {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 14px 29px 0px;
+}
+#containerSearchGifos .informationGif .containerLeft {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+}
+#containerSearchGifos .informationGif .containerLeft .user {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+}
+#containerSearchGifos .informationGif .containerLeft .title {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+#containerSearchGifos .informationGif .containerRigth {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+#containerSearchGifos .informationGif .containerRigth .buttonsGif {
+  width: 36px;
+  height: 36px;
+  border: solid;
+  border-width: 1px;
+  padding: 0;
+  outline: none;
+  border-radius: 6px;
+  opacity: 0.7;
+  background-color: white;
+  border-color: #CED7E1;
+}
+#containerSearchGifos .informationGif .containerRigth .buttonsGif.likeButton {
+  margin: 0px 21px 0px 0px;
+}
+#containerSearchGifos .informationGif .containerRigth .buttonsGif i {
+  font-size: 20px;
+  margin: 5px;
+  color: #572EE5;
+}
+#containerSearchGifos .informationGif .containerRigth .buttonsGif:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  #containerSearchGifos .linkHome {
+    margin: 64px 64px 0px 0px;
+  }
+  #containerSearchGifos .linkHome .closed {
+    font-size: 25px;
+  }
+  #containerSearchGifos .contaGif {
+    margin: 78px 0px 22px;
+  }
+  #containerSearchGifos .informationGif {
+    margin: 0px auto;
+    width: 480px;
+  }
+}
+@media (min-width: 1024px) {
+  #containerSearchGifos .linkHome {
+    margin: 66.4px 278.4px 0px 0px;
+  }
+  #containerSearchGifos .linkHome .closed {
+    font-size: 30px;
+  }
+  #containerSearchGifos .contaGif .buttonsCard {
+    display: inline-block;
+  }
+  #containerSearchGifos .contaGif .containerImg {
+    margin: 0px 25px;
+  }
+}
+
+/*# sourceMappingURL=originalGif.css.map */

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/myGifs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>My Gifs</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <div class="logo">
+                <div class="containerLogoMobile">
+                    <a href="../index.html"><img src="../assets/logo-mobile.svg" alt="logo-mobile" class="logoMobile"></a>
+                </div>
+                <div class="containerLogoDesktop">
+                    <a href="../index.html"><img src="../assets/logo-desktop.svg" alt="logo-desktop" class="logoDesktop"></a>
+                </div>
+                <span class="logoTitle">GIFOS</span>
+                <input type="checkbox" name="check" id="check" class="bars">
+                <label for="check" class="menuBar"></label>
+                <i class="fas fa-bars menu"></i>
+                <i class="fas fa-times closed"></i>
+                <div class="linkBarDesktop">
+                    <a href="./myGifsDarkMode.html" class="link" id="nocturnalDesktop">Modo Nocturno</a>
+                    <a href="./favorites.html" class="link" id="favoritesDesktop">Favoritos</a>
+                    <a href="./myGifs.html" class="link" id="gifosDesktop">Mis GIFOS</a>
+                    <div class="containerButton">
+                        <button id="create"></button>
+                        <div class="horizontal"></div>
+                        <div class="vertical"></div>
+                    </div> 
+                </div>
+                <div class="linkBarMobile">
+                    <a href="./myGifsDarkMode.html" class="link after" id="nocturnalMobile">Modo Nocturno</a>
+                    <a href="./favorites.html" class="link after" id="favoritesMobile">Favoritos</a>
+                    <a href="./myGifs.html" class="link after" id="gifosMobile">Mis GIFOS</a>
+                </div>            
+            </div>
+        </div>
+    </header>
+    <section class="secTitle">
+        <div class="containerTitle">
+            <img src="../assets/icon-mis-gifos.svg" alt="icon-mis-gifos" class="favorite">
+            <h1>Mis GIFOS</h1>
+        </div>
+    </section>
+    <section class="secSearchGifos">
+        <div id="containerSearchGifos">
+            <h3 id="titleSearch">titleSearch</h3>
+        </div>
+        <div class="noSearch">
+            <img src="../assets/icon-mis-gifos-sin-contenido.svg" alt="icon-mis-gifos-sin-contenido" class="noSearchIcon">
+            <span class="otherSearch">¡Anímate a crear tu primer GIFO!</span>
+        </div>
+    </section>
+    <section class="secTredingGifos">
+        <div class="containerTredingGifos" id="containerTredingGifos">
+            <h4>Trending GIFOS</h4>
+            <div class="containerParagraph">
+                <span class="paragraph look">Mira los últimos</span>
+                <span class="paragraph gifos">GIFOS de nuestra comunidad.</span>
+            </div>
+            <div class="containerCard">
+                <button class="buttonsCard leftButton" id="backGif"><i class="fas fa-less-than"></i></button>
+                <div id="containerGifsTreding">
+                    <div class="contaGif contaGifInit" id="containerGifInit">
+                        <button class="buttonsGif likeButton" id="likeButtonInit"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonInit"><i class="fas fa-download"></i></button>
+                        <a href="./originalGif.html" class="buttonsGif expandButton" id="expandButtonInit"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif">
+                            <span class="user" id="userInit"></span>
+                            <span class="title" id="titleInit"></span>
+                        </div>
+                        <div class="containerImg" id="contGifFirst"></div>
+                    </div>
+                    <div class="contaGif contaGifMiddle" id="containerGifMiddle">
+                        <button class="buttonsGif likeButton" id="likeButtonMiddle"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonMiddle"><i class="fas fa-download"></i></button>
+                        <a href="./originalGif.html" class="buttonsGif expandButton" id="expandButtonMiddle"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif middle">
+                            <span class="user" id="userMiddle"></span>
+                            <span class="title" id="titleMiddle"></span>
+                        </div>
+                        <div class="containerImg middle" id="contGifMiddle"></div>
+                    </div>
+                    <div class="contaGif contaGifEnd" id="containerGifEnd">
+                        <button class="buttonsGif likeButton" id="likeButtonEnd"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonEnd"><i class="fas fa-download"></i></button>
+                        <a href="./originalGif.html" class="buttonsGif expandButton" id="expandButtonEnd"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif">
+                            <span class="user" id="userEnd"></span>
+                            <span class="title" id="titleEnd"></span>
+                        </div>
+                        <div class="containerImg" id="contGifLast"></div>
+                    </div>
+                </div>
+                <button class="buttonsCard rightButton" id="frontGif"><i class="fas fa-greater-than"></i></button>
+            </div>            
+        </div>
+    </section>
+    <script src="../scripts/myGifs.js"></script>
+    <footer>
+        <div class="containerFooter">
+            <div class="footerLeft">
+                <span>Compartir en:</span>
+                <a href="https://www.facebook.com/" class="margin"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" class="margin"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footerRight">
+                <span>© GIFOS 2020 All Rights Reserved.</span>
+            </div>
+            <div class="end"></div>
+        </div>
+    </footer>
+</body>
+</html>

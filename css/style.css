@@ -1,0 +1,1024 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+/*---------- Colors----------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.standardText, .containerTredingGifos .containerParagraph .paragraph, .containerHeader .logo .logoTitle {
+  font-family: "Roboto", sans-serif;
+  color: #572EE5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.linkTextMobile, .containerHeader .logo .linkBarMobile .link {
+  font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.linkTextDesktop, .containerTredingGifos h4, #containerSearchGifos .seeMore, #containerSearchGifos h3, .containerTrending span, .containerTrending h2, .containerTitle h1, .containerHeader .logo .linkBarDesktop {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #572EE5;
+}
+
+.styleButton, .containerTredingGifos .containerCard .buttonsCard, .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif, #containerSearchGifos .seeMore, #containerSearchGifos #searchGifos .contaGif .buttonsGif {
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  background-color: white;
+  padding: 0;
+  outline: none;
+}
+
+.robotoRegularText, .containerQueryGifo .containerInputQuery .containerListOptions .options, .containerQueryGifo .containerInputQuery #queryGifos {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.containerHeader {
+  background-color: #572EE5;
+  padding: 5px 0px 0px;
+}
+.containerHeader .logo {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 29px 26px 17.2px 22px;
+}
+.containerHeader .logo .logoDesktop {
+  display: none;
+}
+.containerHeader .logo .logoMobile {
+  width: 48.8px;
+  position: relative;
+}
+.containerHeader .logo .logoTitle {
+  background: white;
+  position: absolute;
+  top: 52px;
+  left: 30px;
+  height: 15.4px;
+}
+.containerHeader .logo .bars {
+  position: absolute;
+  visibility: hidden;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 48px;
+}
+.containerHeader .logo .bars:checked ~ i.menu {
+  display: none;
+}
+.containerHeader .logo .bars:checked ~ i.closed {
+  display: block;
+}
+.containerHeader .logo .bars:checked ~ .linkBarMobile {
+  animation-name: move;
+  animation-duration: 1s;
+  left: 0;
+  right: 0;
+}
+.containerHeader .logo .bars:not(:checked) ~ .linkBarMobile {
+  left: -100%;
+}
+.containerHeader .logo .menuBar {
+  position: absolute;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 48px;
+}
+.containerHeader .logo i {
+  height: 100%;
+  align-self: center;
+}
+.containerHeader .logo i.closed {
+  display: none;
+  font-size: 20px;
+}
+.containerHeader .logo i.menu {
+  font-size: 17px;
+}
+.containerHeader .logo .linkBarDesktop {
+  display: none;
+  font-size: 13px;
+}
+.containerHeader .logo .linkBarDesktop .link {
+  text-decoration: none;
+  color: #572EE5;
+}
+.containerHeader .logo .linkBarDesktop .link:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #5ED7C6;
+}
+.containerHeader .logo .linkBarDesktop .link:active {
+  color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .link:active::after {
+  display: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton {
+  position: relative;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  background-color: white;
+  padding: 0;
+  outline: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover {
+  background-color: #572EE5;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .horizontal {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .vertical {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active {
+  background-color: #9CAFC3;
+  border-color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .horizontal {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .vertical {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .horizontal {
+  position: absolute;
+  width: 18px;
+  height: 1px;
+  background-color: #572EE5;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .vertical {
+  position: absolute;
+  width: 1.5px;
+  height: 18px;
+  background-color: #572EE5;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.containerHeader .logo .linkBarMobile {
+  background-color: rgba(87, 46, 229, 0.9);
+  position: absolute;
+  top: 96.31px;
+  height: 100%;
+  z-index: 1;
+}
+.containerHeader .logo .linkBarMobile .link {
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+.containerHeader .logo .linkBarMobile .link.after::after {
+  content: "";
+  display: block;
+  width: 41px;
+  height: 0.1px;
+  margin: 11px auto;
+  background-color: #FFFFFF;
+  opacity: 0.4;
+}
+.containerHeader .logo .linkBarMobile .link:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #5ED7C6;
+  width: 41px;
+  margin: 11px auto;
+  opacity: 0.4;
+}
+.containerHeader .logo .linkBarMobile .link:active {
+  color: #9CAFC3;
+}
+.containerHeader .logo .linkBarMobile .link#nocturnalMobile {
+  margin: 32px 0px 0px;
+}
+.containerHeader .logo .linkBarMobile .link#favoritesMobile {
+  margin: 2.9px 0px 0px;
+}
+.containerHeader .logo .linkBarMobile .link#gifosMobile {
+  margin: 2.9px 0px 0px;
+}
+
+.containerTitle {
+  margin: 7px 45px 0px;
+}
+.containerTitle h1 {
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+}
+.containerTitle h1 span {
+  color: #5ED7C6;
+}
+
+.containerQueryGifo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 31px 0px 0px;
+}
+.containerQueryGifo img {
+  max-width: 273px;
+  max-height: 130px;
+  width: 100%;
+}
+.containerQueryGifo .containerInputQuery {
+  width: 100%;
+  max-width: 334px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.containerQueryGifo .containerInputQuery #checkQuery {
+  display: none;
+}
+.containerQueryGifo .containerInputQuery #checkQuery:checked ~ .iconOptions {
+  display: block;
+}
+.containerQueryGifo .containerInputQuery #checkQuery:checked ~ .closed {
+  display: block;
+}
+.containerQueryGifo .containerInputQuery #checkQuery:checked ~ .search {
+  display: none;
+}
+.containerQueryGifo .containerInputQuery #checkQuery:checked ~ .containerListOptions {
+  display: flex;
+  flex-direction: column;
+}
+.containerQueryGifo .containerInputQuery #checkQuery:checked ~ #queryGifos {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: hidden;
+}
+.containerQueryGifo .containerInputQuery .iconOptions {
+  display: none;
+  position: absolute;
+  left: 9px;
+  top: 15px;
+  font-size: 20px;
+  color: #9CAFC3;
+}
+.containerQueryGifo .containerInputQuery #queryGifos {
+  width: 100%;
+  height: 50px;
+  border-radius: 27px;
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  background-color: white;
+  outline: none;
+  padding: 0px 35px;
+}
+.containerQueryGifo .containerInputQuery .search {
+  border: none;
+  background-color: white;
+  outline: none;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  padding: 0;
+}
+.containerQueryGifo .containerInputQuery .search i {
+  font-size: 20px;
+  color: #572EE5;
+}
+.containerQueryGifo .containerInputQuery .closed {
+  display: none;
+  border: none;
+  background-color: white;
+  outline: none;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  padding: 0;
+}
+.containerQueryGifo .containerInputQuery .closed i {
+  font-size: 20px;
+  color: #572EE5;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-width: 334px;
+  height: 150px;
+  top: 50px;
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  background-color: white;
+  border-bottom-left-radius: 27px;
+  border-bottom-right-radius: 27px;
+  border-top-style: hidden;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions::before {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 0px;
+  background: #9CAFC3;
+  margin: 0 auto;
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options {
+  padding: 7px 35px;
+  text-transform: capitalize;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options i {
+  position: absolute;
+  left: 9px;
+  font-size: 20px;
+  color: #9CAFC3;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options i.iconFirst {
+  top: 12px;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options i.iconSecond {
+  top: 44px;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options i.iconThird {
+  top: 78px;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options i.iconFourth {
+  top: 110px;
+}
+.containerQueryGifo .containerInputQuery .containerListOptions .options:hover {
+  background-color: #eee;
+}
+
+.containerTrending {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 31px 75px 45px;
+}
+.containerTrending h2 {
+  font-size: 16px;
+  line-height: 25px;
+  margin: 0px 0px 2px;
+}
+.containerTrending span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+
+#containerSearchGifos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0px 21px;
+}
+#containerSearchGifos h3 {
+  display: none;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+  margin: 43px 0px 38px 0px;
+  text-transform: capitalize;
+}
+#containerSearchGifos #searchGifos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#containerSearchGifos #searchGifos .contaGif {
+  position: relative;
+  display: flex;
+  margin: 0px 0px 25px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif {
+  width: 20px;
+  height: 20px;
+  display: none;
+  position: absolute;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 2;
+  right: 0;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.likeButton {
+  margin: 10px 55px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.downloadButton {
+  margin: 10px 30px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif.expandButton {
+  margin: 10px 5px 0px 0px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif i {
+  font-size: 11px;
+  color: #572EE5;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif i.fa-expand-alt {
+  padding: 4px;
+}
+#containerSearchGifos #searchGifos .contaGif .buttonsGif:hover {
+  opacity: 1;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif {
+  display: none;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: initial;
+  bottom: 0;
+  left: 0;
+  margin: 0px 35px 6px 13px;
+  z-index: 2;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif .user {
+  font-size: 9px;
+  font-weight: 300;
+}
+#containerSearchGifos #searchGifos .contaGif .informationGif .title {
+  margin: 6px 0px 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+#containerSearchGifos #searchGifos .contaGif .containerImg {
+  position: relative;
+  width: 156px;
+  height: 120px;
+}
+#containerSearchGifos #searchGifos .contaGif .containerImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+#containerSearchGifos #searchGifos .contaGif:hover::before {
+  content: "";
+  width: 156px;
+  height: 120px;
+  background-color: #572EE5;
+  opacity: 0.7;
+  z-index: 1;
+  position: absolute;
+}
+#containerSearchGifos #searchGifos .contaGif:hover > .buttonsGif {
+  display: block;
+}
+#containerSearchGifos #searchGifos .contaGif:hover > .informationGif {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#containerSearchGifos::before {
+  content: "";
+  width: 338px;
+  height: 0.1px;
+  background: #9CAFC3;
+}
+#containerSearchGifos .seeMore {
+  width: 127px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 48px 0px 79px;
+}
+#containerSearchGifos .seeMore:hover {
+  background-color: #572EE5;
+  color: white;
+}
+
+.noSearch {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.noSearch .noSearchIcon {
+  width: 100px;
+  height: 100px;
+  margin: 0px 0px 29px 0px;
+}
+.noSearch .otherSearch {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 25px;
+  margin: 0px 0px 70px 0px;
+}
+
+.containerTredingGifos {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 0px 0px 82px;
+  background-color: #F3F5F8;
+}
+.containerTredingGifos h4 {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 46px 0px 7px;
+}
+.containerTredingGifos .containerParagraph {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 21px 32px;
+  padding: 0px 2px;
+}
+.containerTredingGifos .containerParagraph .paragraph {
+  font-size: 16px;
+  color: #000000;
+  line-height: 23px;
+  font-weight: 100;
+}
+.containerTredingGifos .containerParagraph .paragraph.look {
+  padding: 0px 5px 0px 0px;
+}
+.containerTredingGifos .containerCard {
+  display: flex;
+  margin: 0px 0px 0px 22px;
+  position: relative;
+  height: 200px;
+  overflow: auto;
+}
+.containerTredingGifos .containerCard #containerGifsTreding {
+  display: flex;
+  position: absolute;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif {
+  width: 25px;
+  height: 25px;
+  display: none;
+  position: absolute;
+  border-radius: 6px;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 2;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.likeButton {
+  margin: 10px 102px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.downloadButton {
+  margin: 10px 67px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif.expandButton {
+  margin: 10px 32px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif i {
+  margin: 5px;
+  font-size: 14px;
+  color: #572EE5;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif:hover {
+  opacity: 1;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif {
+  display: none;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: initial;
+  bottom: 0;
+  left: 0;
+  margin: 0px 35px 6px 13px;
+  z-index: 2;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif .user {
+  font-size: 15px;
+  font-weight: 300;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif .title {
+  margin: 6px 0px 0px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg {
+  position: relative;
+  width: 260px;
+  height: 200px;
+  margin: 0px 22px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover::before {
+  content: "";
+  width: 260px;
+  height: 200px;
+  background-color: #572EE5;
+  opacity: 0.7;
+  z-index: 1;
+  position: absolute;
+  margin: 0px 22px 0px 0px;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover > .buttonsGif {
+  display: block;
+}
+.containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover > .informationGif {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.containerTredingGifos .containerCard .buttonsCard {
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+}
+.containerTredingGifos .containerCard .buttonsCard.leftButton {
+  left: 0;
+}
+.containerTredingGifos .containerCard .buttonsCard.rightButton {
+  right: 0;
+}
+.containerTredingGifos .containerCard .buttonsCard i {
+  color: #572EE5;
+}
+.containerTredingGifos .containerCard .buttonsCard:hover {
+  background-color: #572EE5;
+}
+.containerTredingGifos .containerCard .buttonsCard:hover > i {
+  color: white;
+}
+
+.containerFooter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 47px 0px 0px;
+}
+.containerFooter .footerLeft span {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin: 0px 0px 22px;
+}
+.containerFooter .footerLeft .margin {
+  margin: 0px 19px 0px 0px;
+}
+.containerFooter .footerLeft a i {
+  opacity: 0.2;
+  color: #000000;
+  font-size: 20px;
+}
+.containerFooter .footerLeft a i:hover {
+  color: #572EE5;
+  opacity: 1;
+}
+.containerFooter .footerRight {
+  margin: 46px 0px 23px;
+}
+.containerFooter .footerRight span {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+.containerFooter .end {
+  width: 100%;
+  height: 5px;
+  background-color: #572EE5;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .containerHeader .logo {
+    padding: 18px 70px 12.9px;
+  }
+  .containerHeader .logo .logoMobile {
+    display: none;
+  }
+  .containerHeader .logo .logoDesktop {
+    display: block;
+    width: 59.1px;
+  }
+  .containerHeader .logo .logoTitle {
+    font-size: 18px;
+    top: 48px;
+    left: 82px;
+    height: 20.1px;
+  }
+  .containerHeader .logo .bars {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo .menuBar {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo i.menu {
+    font-size: 22px;
+  }
+  .containerHeader .logo i.closed {
+    font-size: 29px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    top: 92.18px;
+  }
+
+  .containerTitle {
+    margin: 38px 95px 0px;
+  }
+  .containerTitle h1 {
+    font-size: 35px;
+  }
+
+  .containerQueryGifo {
+    margin: 24px 0px 0px;
+  }
+  .containerQueryGifo img {
+    max-width: 399px;
+    max-height: 190px;
+  }
+  .containerQueryGifo .containerInputQuery {
+    max-width: 551px;
+  }
+  .containerQueryGifo .containerInputQuery .iconOptions {
+    left: 20px;
+  }
+  .containerQueryGifo .containerInputQuery #queryGifos {
+    padding: 0px 55px;
+  }
+  .containerQueryGifo .containerInputQuery .containerListOptions {
+    max-width: 551px;
+  }
+  .containerQueryGifo .containerInputQuery .containerListOptions::before {
+    width: 500px;
+  }
+  .containerQueryGifo .containerInputQuery .containerListOptions .options {
+    padding: 7px 55px;
+  }
+  .containerQueryGifo .containerInputQuery .containerListOptions .options i {
+    left: 20px;
+  }
+
+  .containerTrending {
+    margin: 73px 0px 95px;
+  }
+  .containerTrending h2 {
+    margin: 0px 0px 7px;
+    font-size: 18px;
+  }
+  .containerTrending span {
+    font-size: 16px;
+  }
+
+  #containerSearchGifos {
+    padding: 0px 100px;
+  }
+  #containerSearchGifos h3 {
+    font-size: 35px;
+  }
+  #containerSearchGifos #searchGifos .contaGif {
+    margin: 0px 0px 31px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif {
+    width: 32px;
+    height: 32px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.likeButton {
+    margin: 10px 90px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.downloadButton {
+    margin: 10px 50px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif.expandButton {
+    margin: 10px 10px 0px 0px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif i {
+    font-size: 20px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .buttonsGif i.fa-expand-alt {
+    padding: 6px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .informationGif .user {
+    font-size: 15px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .informationGif .title {
+    font-size: 16px;
+  }
+  #containerSearchGifos #searchGifos .contaGif .containerImg {
+    width: 260px;
+    height: 200px;
+  }
+  #containerSearchGifos #searchGifos .contaGif:hover::before {
+    width: 260px;
+    height: 200px;
+  }
+
+  .containerTredingGifos {
+    padding: 0px 0px 182px;
+  }
+  .containerTredingGifos h4 {
+    margin: 67px 0px 12px;
+    font-size: 25px;
+  }
+  .containerTredingGifos .containerParagraph {
+    margin: 0px 0px 53px;
+    padding: 0px;
+  }
+  .containerTredingGifos .containerParagraph .paragraph {
+    font-size: 18px;
+  }
+
+  .containerFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 49.5px 0px 0px;
+  }
+  .containerFooter .footerLeft {
+    display: flex;
+    margin: 0px 0px 0px 80px;
+  }
+  .containerFooter .footerLeft span {
+    margin: 0px 19px 0px 0px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 80px 0px 0px;
+  }
+  .containerFooter .end {
+    margin: 51.5px 0px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .containerHeader .logo {
+    padding: 18px 156px 12.9px;
+  }
+  .containerHeader .logo .logoTitle {
+    left: 168px;
+  }
+  .containerHeader .logo .bars:checked ~ i.closed {
+    display: none;
+  }
+  .containerHeader .logo i.menu {
+    display: none;
+  }
+  .containerHeader .logo i.closed {
+    display: none;
+  }
+  .containerHeader .logo .linkBarDesktop {
+    display: flex;
+    align-items: center;
+  }
+  .containerHeader .logo .linkBarDesktop .link {
+    text-transform: uppercase;
+  }
+  .containerHeader .logo .linkBarDesktop .link#nocturnalDesktop {
+    margin: 0px 41.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#favoritesDesktop {
+    margin: 0px 50px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#gifosDesktop {
+    margin: 0px 59.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    display: none;
+  }
+
+  .containerTitle {
+    margin: 76px 253px 0px;
+    padding: 0px 155px;
+  }
+  .containerTitle h1 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  #containerSearchGifos {
+    padding: 0px 156px;
+  }
+  #containerSearchGifos h3 {
+    margin: 82px 0px 59px 0px;
+  }
+
+  .noSearch .noSearchIcon {
+    width: 150px;
+    height: 150px;
+    margin: 50px 0px 29px 0px;
+  }
+  .noSearch .otherSearch {
+    margin: 0px 0px 149px 0px;
+  }
+
+  .containerTredingGifos .containerCard {
+    margin: 0px 94px 0px;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 275px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif {
+    width: 32px;
+    height: 32px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonInit {
+    margin: 10px 94px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonInit {
+    margin: 10px 52px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonInit {
+    margin: 10px 10px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonMiddle {
+    margin: 10px 122px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonMiddle {
+    margin: 10px 80px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonMiddle {
+    margin: 10px 38px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#likeButtonEnd {
+    margin: 10px 94px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#downloadButtonEnd {
+    margin: 10px 52px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif#expandButtonEnd {
+    margin: 10px 10px 0px 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .buttonsGif i {
+    font-size: 18px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif {
+    margin: 0px 18px 51px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .informationGif.middle {
+    margin: 0px 46px 51px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg {
+    width: 357px;
+    height: 275px;
+    margin: 0px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif .containerImg.middle {
+    margin: 0px 28px;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif:hover::before {
+    width: 357px;
+    height: 275px;
+    margin: 0;
+  }
+  .containerTredingGifos .containerCard #containerGifsTreding .contaGif.contaGifMiddle:hover::before {
+    margin: 0px 28px 0px 0px;
+  }
+  .containerTredingGifos .containerCard .buttonsCard {
+    display: block;
+  }
+
+  .containerFooter .footerLeft {
+    margin: 0px 0px 0px 156px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 158px 0px 0px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

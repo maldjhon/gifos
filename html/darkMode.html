@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/darkMode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Gifs</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <div class="logo">
+                <img src="../assets/logo-mobile-modo-noct.svg" alt="logo-mobile" class="logoMobile">
+                <img src="../assets/Logo-modo-noc.svg" alt="logo-desktop" class="logoDesktop">
+                <span class="logoTitle">GIFOS</span>
+                <input type="checkbox" name="check" id="check" class="bars">
+                <label for="check" class="menuBar"></label>
+                <i class="fas fa-bars menu"></i>
+                <i class="fas fa-times closed"></i>
+                <div class="linkBarDesktop">
+                    <a href="../index.html" class="link" id="nocturnalDesktop">Modo Diurno</a>
+                    <a href="./favoritesDarkMode.html" class="link" id="favoritesDesktop">Favoritos</a>
+                    <a href="./myGifsDarkMode.html" class="link" id="gifosDesktop">Mis GIFOS</a>
+                    <div class="containerButton">
+                        <button id="create"></button>
+                        <div class="horizontal"></div>
+                        <div class="vertical"></div>
+                    </div> 
+                </div>
+                <div class="linkBarMobile">
+                    <a href="../index.html" class="link after" id="nocturnalMobile">Modo Diurno</a>
+                    <a href="./favoritesDarkMode.html" class="link after" id="favoritesMobile">Favoritos</a>
+                    <a href="./myGifsDarkMode.html" class="link after" id="gifosMobile">Mis GIFOS</a>
+                </div>            
+            </div>
+        </div>
+    </header>
+    <section class="secTitle">
+        <div class="containerTitle">
+            <h1>Inspírate, busca, guarda, y crea los mejores
+                <span>GIFOS</span>
+            </h1>
+        </div>
+        <div class="containerQueryGifo">
+            <img src="../assets/ilustra_header.svg" alt="ilustra_header">
+            <div class="containerInputQuery">
+                <input type="checkbox" name="checkQuery" id="checkQuery">
+                <i class="fas fa-search iconOptions"></i>
+                <input type="text" name="queryGifos" id="queryGifos" placeholder="Busca GIFOS y más"> 
+                <button type="submit" class="search" id="search"><i class="fas fa-search"></i></button>
+                <button type="reset" class="closed" id="closed"><i class="fas fa-times"></i></button>
+                <div class="containerListOptions">
+                    <div class="options" id="suggestionFirst">
+                        <i class="fas fa-search iconFirst"></i>
+                        <span id="optionFirst"></span>
+                    </div>
+                    <div class="options" id="suggestionSecond">
+                        <i class="fas fa-search iconSecond"></i>
+                        <span id="optionSecond"></span>
+                    </div>
+                    <div class="options" id="suggestionThird">
+                        <i class="fas fa-search iconThird"></i>
+                        <span id="optionThird"></span>
+                    </div>
+                    <div class="options" id="suggestionFourth">
+                        <i class="fas fa-search iconFourth"></i>
+                        <span id="optionFourth"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secTrending">
+        <div class="containerTrending">
+            <h2>Trending:</h2>
+            <span>Reactions, Entertainment, Sports, Stickers, Artists</span>
+        </div>
+    </section>
+    <section class="secSearchGifos">
+        <div id="containerSearchGifos">
+            <h3 id="titleSearch">titleSearch</h3>
+        </div>
+        <div class="noSearch">
+            <img src="../assets/icon-busqueda-sin-resultado.svg" alt="icon-busqueda-sin-resultado" class="noSearchIcon">
+            <span class="otherSearch">Intenta con otra búsqueda.</span>
+        </div>
+    </section>
+    <section class="secTredingGifos">
+        <div class="containerTredingGifos" id="containerTredingGifos">
+            <h4>Trending GIFOS</h4>
+            <div class="containerParagraph">
+                <span class="paragraph look">Mira los últimos</span>
+                <span class="paragraph gifos">GIFOS de nuestra comunidad.</span>
+            </div>
+            <div class="containerCard">
+                <button class="buttonsCard leftButton" id="backGif"><i class="fas fa-less-than"></i></button>
+                <div id="containerGifsTreding">
+                    <div class="contaGif contaGifInit" id="containerGifInit">
+                        <button class="buttonsGif likeButton" id="likeButtonInit"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonInit"><i class="fas fa-download"></i></button>
+                        <a href="./originalGifDarkMode.html" class="buttonsGif expandButton" id="expandButtonInit"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif">
+                            <span class="user" id="userInit"></span>
+                            <span class="title" id="titleInit"></span>
+                        </div>
+                        <div class="containerImg" id="contGifFirst"></div>
+                    </div>
+                    <div class="contaGif contaGifMiddle" id="containerGifMiddle">
+                        <button class="buttonsGif likeButton" id="likeButtonMiddle"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonMiddle"><i class="fas fa-download"></i></button>
+                        <a href="./originalGifDarkMode.html" class="buttonsGif expandButton" id="expandButtonMiddle"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif middle">
+                            <span class="user" id="userMiddle"></span>
+                            <span class="title" id="titleMiddle"></span>
+                        </div>
+                        <div class="containerImg middle" id="contGifMiddle"></div>
+                    </div>
+                    <div class="contaGif contaGifEnd" id="containerGifEnd">
+                        <button class="buttonsGif likeButton" id="likeButtonEnd"><i class="far fa-heart"></i></button>
+                        <button class="buttonsGif downloadButton" id="downloadButtonEnd"><i class="fas fa-download"></i></button>
+                        <a href="./originalGifDarkMode.html" class="buttonsGif expandButton" id="expandButtonEnd"><i class="fas fa-expand-alt"></i></a>
+                        <div class="informationGif">
+                            <span class="user" id="userEnd"></span>
+                            <span class="title" id="titleEnd"></span>
+                        </div>
+                        <div class="containerImg" id="contGifLast"></div>
+                    </div>
+                </div>
+                <button class="buttonsCard rightButton" id="frontGif"><i class="fas fa-greater-than"></i></button>
+            </div>            
+        </div>
+    </section>
+    <script src="../scripts/index.js"></script>
+    <footer>
+        <div class="containerFooter">
+            <div class="footerLeft">
+                <span>Compartir en:</span>
+                <a href="https://www.facebook.com/" class="margin"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" class="margin"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footerRight">
+                <span>© GIFOS 2020 All Rights Reserved.</span>
+            </div>
+            <div class="end"></div>
+        </div>
+    </footer>
+</body>
+</html>

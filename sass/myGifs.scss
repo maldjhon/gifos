@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import "./variables.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.standardText{
+    font-family: 'Roboto', sans-serif;
+    color: $baseColor;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.linkTextMobile{
+    font-family: 'Montserrat', sans-serif;
+    color: $whiteText;
+    text-decoration: none;
+}
+
+.linkTextDesktop{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: $baseColor;
+}
+
+.styleButton{
+    border: solid;
+    border-width: 1px;
+    border-color: $baseColor;
+    background-color: $whiteColor;
+    padding: 0;
+    outline: none;
+}
+
+.robotoRegularText{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.containerHeader{
+    background-color: $baseColor;
+    padding: 5px 0px 0px;
+    .logo{
+        background: $whiteColor;
+        display: flex;
+        justify-content: space-between;
+        padding: 29px 26px 17.2px 22px;
+        .containerLogoDesktop{
+            display: none;
+            position: relative;
+            a{
+                position: absolute;
+            }
+        }
+        .containerLogoMobile{
+            position: relative;
+            a{
+                position: absolute;
+                .logoMobile{
+                    width: 48.8px;
+                }
+            }
+        }
+        .logoTitle{
+            @extend .standardText;
+            background: $whiteColor;
+            position: absolute;
+            top: 52px;
+            left: 30px;
+            height: 15.4px;
+        }
+        .bars{
+            position: absolute;
+            visibility: hidden;
+            width: 15px;
+            height: 14px;
+            right: 26px;
+            top: 35px;
+            &:checked{
+                ~ i{
+                    &.menu{
+                        display: none;
+                    }
+                    &.closed{
+                        display: block;
+                    }
+                }
+                ~ .linkBarMobile{
+                    animation-name: move;
+                    animation-duration: 1s;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            &:not(:checked){
+                ~ .linkBarMobile{
+                    left: -100%;
+                }
+            }
+        }
+        .menuBar{
+            position: absolute;
+            width: 15px;
+            height: 14px;
+            right: 26px;
+            top: 35px;
+        }
+        i{
+            height: 100%;
+            align-self: center;
+            &.closed{
+                display: none;
+                font-size: 20px;
+            }
+            &.menu{
+                font-size: 17px;
+            }
+        }
+        .linkBarDesktop{
+            display: none;
+            @extend .linkTextDesktop;
+            font-size: 13px;
+            .link{
+                text-decoration: none;
+                color: $baseColor;
+                &:hover{
+                    &::after{
+                        content: "";
+                        display: block;
+                        height: 1px;
+                        background-color:$hoverColor;
+                    }
+                }
+                &:active{
+                    color: $activeColor;
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+            .containerButton{
+                position: relative;
+                button{
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 50%;
+                    border: solid;
+                    border-width: 1px;
+                    border-color: $baseColor;
+                    background-color: $whiteColor;
+                    padding: 0;
+                    outline: none;
+                    &:hover{
+                        background-color: $baseColor;
+                        & ~ .horizontal{
+                            background-color: $whiteColor;
+                        }
+                        & ~ .vertical{
+                            background-color: $whiteColor;
+                        }
+                    }
+                    &:active{
+                        background-color: $activeColor;
+                        border-color: $activeColor;
+                        & ~ .horizontal{
+                            background-color: $whiteColor;
+                        }
+                        & ~ .vertical{
+                            background-color: $whiteColor;
+                        }
+                    }
+                }
+               .horizontal{
+                    position: absolute;
+                    width: 18px;
+                    height: 1px;
+                    background-color: $baseColor;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+                .vertical{
+                    position: absolute;
+                    width: 1.5px;
+                    height: 18px;
+                    background-color: $baseColor;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        .linkBarMobile{
+            background-color: $backgroundMenuMobile;
+            position: absolute;
+            top: 96.31px;
+            height: 100%;
+            z-index: 1;
+            .link{
+                @extend .linkTextMobile;
+                font-size: 15px;
+                display: block;
+                text-align: center;
+                line-height: 30px;
+                &.after{
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 41px;
+                        height: 0.1px;
+                        margin: 11px auto;
+                        background-color: $whiteText;
+                        opacity: 0.4;                    
+                    }
+                }
+                &:hover{
+                    &::after{
+                        content: "";
+                        display: block;
+                        height: 1px;
+                        background-color:$hoverColor;
+                        width: 41px;
+                        margin: 11px auto;
+                        opacity: 0.4;
+                    }
+                }
+                &:active{
+                    color: $activeColor;
+                }
+                &#nocturnalMobile{
+                    margin: 32px 0px 0px;
+                }
+                &#favoritesMobile{
+                    margin: 2.9px 0px 0px;
+                }
+                &#gifosMobile{
+                    margin: 2.9px 0px 0px;
+                }
+            }
+        }
+    }
+}
+
+.containerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 45px 0px;
+    img{
+        width: 24px;
+        height: 22px;
+        margin: 5px 0px 7px;
+    }
+    h1{
+        @extend .linkTextDesktop;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        span{
+            color: $hoverColor;
+        }
+    }
+}
+
+#containerSearchGifos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    #searchGifos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .contaGif{
+            position: relative;
+            display: flex;
+            margin: 0px 10px 25px 0px;
+            .buttonsGif{
+                width: 20px;
+                height: 20px;
+                display: none;
+                position: absolute;
+                @extend .styleButton;
+                border-radius: 6px;
+                opacity: 0.7;
+                z-index: 2;
+                right: 0;
+                &.deleteButton{
+                    margin: 10px 55px 0px 0px;
+                }
+                &.downloadButton{
+                    margin: 10px 30px 0px 0px;
+                }
+                &.expandButton{
+                    margin: 10px 5px 0px 0px;
+                }
+                i{
+                    font-size: 11px;
+                    color: $baseColor;
+                    &.fa-expand-alt{
+                        padding: 4px;
+                    }
+                }
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            .informationGif{
+                display: none;
+                position: absolute;
+                font-family: "Roboto", sans-serif;                    
+                color: $whiteColor;
+                text-align: initial;
+                bottom: 0;
+                left: 0;
+                margin: 0px 35px 6px 13px;
+                z-index: 2;
+                .user{
+                    font-size: 9px;
+                    font-weight: 300;
+                }
+                .title{
+                    margin: 6px 0px 0px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+            .containerImg{
+                position: relative;
+                width: 156px;
+                height: 120px;
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;        
+                }
+            }
+            &:hover{
+                &::before{
+                    content: "";
+                    width: 156px;
+                    height: 120px;
+                    background-color: $baseColor;
+                    opacity: 0.7;
+                    z-index: 1;
+                    position: absolute;
+                }
+                & > .buttonsGif{
+                    display: block;
+                }
+                & > .informationGif{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .seeMore{
+        @extend .styleButton;
+        width: 127px;
+        height: 50px;
+        border-radius: 25px;
+        @extend .linkTextDesktop;
+        font-size: 13px;
+        font-weight: 700;
+        margin: 48px 0px 79px;
+        &:hover{
+            background-color: $baseColor;
+            color: $whiteColor;
+        }
+    }
+}
+
+.noSearch{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    .noSearchIcon{
+        width: 100px;
+        height: 100px;
+        margin: 36px 0px 23.7px 0px;
+    }
+    .otherSearch{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: $searchColor;
+        text-align: center;
+        line-height: 25px;
+        width: 300px;
+        margin: 0px 0px 46.7px 0px;
+    }
+}
+
+.containerTredingGifos{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 0px 0px 82px;
+    background-color: $backgroundTrending;
+    h4{
+        @extend .linkTextDesktop;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 46px 0px 7px;
+    }
+    .containerParagraph{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px 21px 32px;
+        padding: 0px 2px;
+        .paragraph{
+            @extend .standardText;
+            font-size: 16px;
+            color: $blackColor;
+            line-height: 23px;
+            font-weight: 100;
+            &.look{
+                padding: 0px 5px 0px 0px;
+            }
+        }
+    }
+    .containerCard{
+        display: flex;
+        margin: 0px 0px 0px 22px;
+        position: relative;
+        height: 200px;
+        overflow: auto;
+        #containerGifsTreding{
+            display: flex;
+            position: absolute;
+            .contaGif{
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                .buttonsGif{
+                    width: 25px;
+                    height: 25px;
+                    display: none;
+                    position: absolute;
+                    @extend .styleButton;
+                    border-radius: 6px;
+                    border-radius: 6px;
+                    opacity: 0.7;
+                    z-index: 2;
+                    &.likeButton{
+                        margin: 10px 102px 0px 0px;
+                    }
+                    &.downloadButton{
+                        margin: 10px 67px 0px 0px;
+                    }
+                    &.expandButton{
+                        margin: 10px 32px 0px 0px;
+                    }
+                    i{
+                        margin: 5px;
+                        font-size: 14px;
+                        color: $baseColor;
+                    }
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                .informationGif{
+                    display: none;
+                    position: absolute;
+                    font-family: "Roboto", sans-serif;                    
+                    color: $whiteColor;
+                    text-align: initial;
+                    bottom: 0;
+                    left: 0;
+                    margin: 0px 35px 6px 13px;
+                    z-index: 2;
+                    .user{
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+                    .title{
+                        margin: 6px 0px 0px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+                .containerImg{
+                    position: relative;
+                    width: 260px;
+                    height: 200px;
+                    margin: 0px 22px 0px 0px;
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;        
+                    }
+                }
+                &:hover{
+                    &::before{
+                        content: "";
+                        width: 260px;
+                        height: 200px;
+                        background-color: $baseColor;
+                        opacity: 0.7;
+                        z-index: 1;
+                        position: absolute;
+                        margin: 0px 22px 0px 0px;
+                    }
+                    & > .buttonsGif{
+                        display: block;
+                    }
+                    & > .informationGif{
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        .buttonsCard{
+            width: 40px;
+            height: 40px;
+            display: none;
+            position: absolute;
+            @extend .styleButton;
+            &.leftButton{
+                left: 0;
+            }
+            &.rightButton{
+                right: 0;
+            }
+            i{
+                color: $baseColor;
+            }
+            &:hover{
+                background-color: $baseColor;
+                & > i{
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+}
+
+.containerFooter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 47px 0px 0px;
+    .footerLeft{
+        span{
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            text-align: center;
+            margin: 0px 0px 22px;
+        }
+        .margin{
+            margin: 0px 19px 0px 0px;
+        }
+        a{
+            i{
+                opacity: 0.2;
+                color: $blackColor;
+                font-size: 20px;
+                &:hover{
+                    color: $baseColor;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .footerRight{
+        margin: 46px 0px 23px;
+        span{
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    .end{
+        width: 100%;
+        height: 5px;
+        background-color: $baseColor;
+    }
+}
+
+@keyframes move{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@media (min-width: 768px){
+    .containerHeader{
+        .logo{
+            padding: 18px 70px 12.9px;
+            .containerLogoMobile{
+                display: none;
+            }
+            .containerLogoDesktop{
+                display: block;
+                a{
+                    .logoDesktop{
+                        width: 59.1px;
+                        left: -266px;
+                    }
+                }
+            }
+            .logoTitle{
+                font-size: 18px;
+                top: 48px;
+                left: 82px;
+                height: 20.1px;
+            }
+            .bars{
+                width: 20px;
+                height: 22px;
+                right: 70px;
+                top: 38px;
+            }
+            .menuBar{
+                width: 20px;
+                height: 22px;
+                right: 70px;
+                top: 38px;
+            }
+            i{
+                &.menu{
+                   font-size: 22px;
+                }
+                &.closed{
+                    font-size: 29px;
+                }
+            }
+            .linkBarMobile{
+                top: 92.18px;
+            }
+        }
+    }
+    .containerTitle{
+        margin: 0px 95px;
+        img{
+            margin: 11px 0px 8px;
+        }
+        h1{
+            font-size: 25px;
+        }
+    }
+    #containerSearchGifos{
+        padding: 0px 100px;
+        #searchGifos{
+            .contaGif{
+                margin: 0px 15px 31px 0px;
+                .buttonsGif{
+                    width: 32px;
+                    height: 32px;
+                    &.deleteButton{
+                        margin: 10px 90px 0px 0px;
+                    }
+                    &.downloadButton{
+                        margin: 10px 50px 0px 0px;
+                    }
+                    &.expandButton{
+                        margin: 10px 10px 0px 0px;
+                    }
+                    i{
+                        font-size: 20px;
+                        &.fa-expand-alt{
+                            padding: 6px;
+                        }
+                    }
+                }
+                .informationGif{
+                    .user{
+                        font-size: 15px;
+                    }
+                    .title{
+                        font-size: 16px;
+                    }
+                }
+                .containerImg{
+                    width: 260px;
+                    height: 200px;
+                }
+                &:hover{
+                    &::before{
+                        width: 260px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+    .noSearch{
+        .noSearchIcon{
+            margin: 109.3px 0px 23.7px 0px;
+        }
+        .otherSearch{
+            width: 431px;
+            margin: 0px 0px 137px 0px;
+        }
+    }
+    .containerTredingGifos{
+        padding: 0px 0px 182px;
+        h4{
+            margin: 67px 0px 12px;
+            font-size: 25px;
+        }
+        .containerParagraph{
+            margin: 0px 0px 53px;
+            padding: 0px;
+            .paragraph{
+                font-size: 18px;
+            }
+        }
+    }
+    .containerFooter{
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 49.5px 0px 0px;
+        .footerLeft{
+            display: flex;
+            margin: 0px 0px 0px 80px;
+            span{
+                margin: 0px 19px 0px 0px;
+            }
+        }
+        .footerRight{
+            margin: 0px 80px 0px 0px;
+        }
+        .end{
+            margin: 51.5px 0px 0px;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .containerHeader{
+        .logo{
+            padding: 18px 156px 12.9px;
+            .containerLogoDesktop{
+                a{
+                    .logoDesktop{
+                        left: -286px;
+                    }
+                }
+            }
+            .logoTitle{
+                left: 168px;
+            }
+            .bars{
+                &:checked{
+                    ~ i{
+                        &.closed{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            i{
+                &.menu{
+                   display: none;
+                }
+                &.closed{
+                    display: none;
+                }
+            }
+            .linkBarDesktop{
+                display: flex;
+                align-items: center;
+                .link{
+                    text-transform: uppercase;
+                    &#nocturnalDesktop{
+                        margin: 0px 41.5px 0px 0px;
+                    }
+                    &#favoritesDesktop{
+                        margin: 0px 50px 0px 0px;
+                    }
+                    &#gifosDesktop{
+                        margin: 0px 59.5px 0px 0px;
+                    }
+                }
+            }
+            .linkBarMobile{
+                display: none;
+            }
+        }
+    }
+    .containerTitle{
+        margin: 11px 253px 0px;
+        padding: 0px 155px;
+    }
+    #containerSearchGifos{
+        padding: 0px 156px;
+        #searchGifos{
+            .contaGif{
+                margin: 0px 17px 31px 0px;
+            }
+        }
+    }
+    .noSearch{
+        .noSearchIcon{
+            width: 150px;
+            height: 150px;
+            margin: 50px 0px 29px 0px;
+        }
+        .otherSearch{
+            margin: 0px 0px 149px 0px;
+        }
+    }
+    .containerTredingGifos{
+        .containerCard{
+            margin: 0px 94px 0px;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 275px;
+            #containerGifsTreding{
+                .contaGif{
+                    .buttonsGif{
+                        width: 32px;
+                        height: 32px;
+                        &#likeButtonInit{
+                            margin: 10px 94px 0px 0px;
+                        }
+                        &#downloadButtonInit{
+                            margin: 10px 52px 0px 0px;
+                        }
+                        &#expandButtonInit{
+                            margin: 10px 10px 0px 0px;
+                        }
+                        &#likeButtonMiddle{
+                            margin: 10px 122px 0px 0px;
+                        }
+                        &#downloadButtonMiddle{
+                            margin: 10px 80px 0px 0px;
+                        }
+                        &#expandButtonMiddle{
+                            margin: 10px 38px 0px 0px;
+                        }
+                        &#likeButtonEnd{
+                            margin: 10px 94px 0px 0px;
+                        }
+                        &#downloadButtonEnd{
+                            margin: 10px 52px 0px 0px;
+                        }
+                        &#expandButtonEnd{
+                            margin: 10px 10px 0px 0px;
+                        }
+                        i {
+                            font-size: 18px;
+                        }
+                    }
+                    .informationGif{
+                        margin: 0px 18px 51px;
+                        &.middle{
+                            margin: 0px 46px 51px;
+                        }
+                    }
+                    .containerImg{
+                        width: 357px;
+                        height: 275px;
+                        margin: 0px;
+                        &.middle{
+                            margin: 0px 28px;
+                        }
+                    }
+                    &:hover{
+                        &::before{
+                            width: 357px;
+                            height: 275px;
+                            margin: 0;
+                        }
+                    }
+                    &.contaGifMiddle{
+                        &:hover{
+                            &::before{
+                                margin: 0px 28px 0px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+            .buttonsCard{
+                display: block;
+            }
+        }
+    }
+    .containerFooter{
+        .footerLeft{
+            margin: 0px 0px 0px 156px;
+        }
+        .footerRight{
+            margin: 0px 158px 0px 0px;
+        }
+    }
+}

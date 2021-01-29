@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/createGifDarkMode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Create Gif</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <div class="logo">
+                <div class="containerLogoMobile">
+                    <a href="../index.html"><img src="../assets/logo-mobile-modo-noct.svg" alt="logo-mobile" class="logoMobile"></a>
+                </div>
+                <div class="containerLogoDesktop">
+                    <a href="../index.html"><img src="../assets/Logo-modo-noc.svg" alt="logo-desktop" class="logoDesktop"></a>
+                </div>
+                <span class="logoTitle">GIFOS</span>
+                <input type="checkbox" name="check" id="check" class="bars">
+                <label for="check" class="menuBar"></label>
+                <i class="fas fa-bars menu"></i>
+                <i class="fas fa-times closed"></i>
+                <div class="linkBarDesktop">
+                    <a href="./createGif.html" class="link" id="nocturnalDesktop">Modo Diurno</a>
+                    <a href="./favoritesDarkMode.html" class="link" id="favoritesDesktop">Favoritos</a>
+                    <a href="./myGifsDarkMode.html" class="link" id="gifosDesktop">Mis GIFOS</a>
+                    <div class="containerButton">
+                        <button></button>
+                        <div class="horizontal"></div>
+                        <div class="vertical"></div>
+                    </div> 
+                </div>
+                <div class="linkBarMobile">
+                    <a href="./createGif.html" class="link after" id="nocturnalMobile">Modo Diurno</a>
+                    <a href="./favoritesDarkMode.html" class="link after" id="favoritesMobile">Favoritos</a>
+                    <a href="./myGifsDarkMode.html" class="link after" id="gifosMobile">Mis GIFOS</a>
+                </div>            
+            </div>
+        </div>
+    </header>
+    <section class="secCreateGif">
+        <div class="containerCreateGif">
+            <img src="../assets/camara-modo-noc.svg" alt="camara" class="camara">
+            <div class="proyection">
+                <div class="topProyection"></div>
+                <div class="bottomProyection"></div>
+            </div>
+            <div class="containerSquare">
+                <input type="checkbox" name="displayVideo" id="displayVideo">
+                <input type="checkbox" name="hover" id="hoverDisplay">
+                <input type="checkbox" name="sucessful" id="sucessful">
+                <div class="squareTop">
+                    <div class="topLeft"></div>
+                    <div class="topRigth"></div>
+                </div>
+                <div class="title">
+                    <div id="containerVideo">
+                        <button class="buttonsGif downloadButton" id="downloadButton"><i class="fas fa-download"></i></button>
+                        <button class="buttonsGif linkButton" id="linkButton"><i class="fas fa-link"></i></button>
+                        <img src="../assets/loader.svg" alt="loader" class="send loader">
+                        <img src="../assets/check.svg" alt="check" class="send checkSend">
+                        <span class="text weSendGif">Estamos subiendo tu GIFO</span>
+                        <span class="text sendSuccess">GIFO subido con éxito</span>
+                    </div>
+                    <input type="checkbox" name="change" id="changeText">
+                    <input type="checkbox" name="change" id="hiddenText">
+                    <h1>Aquí podrás
+                        <span class="text">crear tus propios</span> 
+                        <span class="gifos">GIFOS</span>
+                    </h1>
+                    <h2>¿Nos das acceso 
+                        <span>a tu cámara?</span> 
+                    </h2>
+                    <div class="paragraph">
+                        <span class="initCreate">¡Crea tu GIFO en sólo 3 pasos!</span>
+                        <span class="initCreate">(sólo necesitas una cámara para grabar un video)</span>
+                        <span class="waitPermission">El acceso a tu camara será válido sólo</span>
+                        <span class="waitPermission">por el tiempo en el que estés creando el GIFO.</span>
+                    </div>
+                </div>
+                <div class="squareBottom">
+                    <div class="bottomLeft"></div>
+                    <div class="bottomRigth"></div>
+                </div>
+            </div>
+        </div>
+        <div class="containerPages">
+            <input type="checkbox" name="changeParam" id="changeParam">
+            <div class="options">
+                <input type="checkbox" name="changeColor" id="changeOne">
+                <input type="checkbox" name="changeColor" id="changeTwo">
+                <input type="checkbox" name="changeColor" id="waitSend">
+                <div class="page one" id="one"><span>1</span></div>
+                <div class="page" id="two"><span>2</span></div>
+                <div class="page" id="three"><span>3</span></div>
+                <span id="interval"></span>
+                <a href="./createGifDarkMode.html" class="again" id="again">REPETIR CAPTURA</a>
+                <div class="division"></div>
+                <button class="button init" id="buttonInit">COMENZAR</button>
+                <button class="button record" id="buttonRecord">GRABAR</button>
+                <button class="button stop" id="buttonStop">FINALIZAR</button>
+                <button class="button send" id="buttonSend">SUBIR GIFO</button>
+            </div>
+            <img src="../assets/pelicula-modo-noc.svg" alt="pelicula">
+        </div>
+    </section>
+    <script src="../scripts/createGif.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <footer>
+        <div class="containerFooter">
+            <div class="footerLeft">
+                <span>Compartir en:</span>
+                <a href="https://www.facebook.com/" class="margin"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" class="margin"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footerRight">
+                <span>© GIFOS 2020 All Rights Reserved.</span>
+            </div>
+            <div class="end"></div>
+        </div>
+    </footer>
+</body>
+</html>

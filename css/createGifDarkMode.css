@@ -1,0 +1,746 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+/*---------- Colors----------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.standardText, .containerHeader .logo .logoTitle {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.linkTextMobile, .containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo .text {
+  font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.linkTextDesktop, .containerPages .options .button, .containerPages .options .again, .containerPages .options #interval, .containerCreateGif .containerSquare .title h2, .containerCreateGif .containerSquare .title h1, .containerHeader .logo .linkBarDesktop {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+.styleButton, .containerPages .options .button, .containerCreateGif .containerSquare .title #containerVideo .buttonsGif {
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: #37383C;
+  padding: 0;
+  outline: none;
+}
+
+.robotoRegularText {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.containerHeader {
+  background-color: #000000;
+  padding: 5px 0px 0px;
+}
+.containerHeader .logo {
+  background: #37383C;
+  display: flex;
+  justify-content: space-between;
+  padding: 29px 26px 17.2px 22px;
+}
+.containerHeader .logo .containerLogoDesktop {
+  display: none;
+  position: relative;
+}
+.containerHeader .logo .containerLogoDesktop a {
+  position: absolute;
+}
+.containerHeader .logo .containerLogoMobile {
+  position: relative;
+}
+.containerHeader .logo .containerLogoMobile a {
+  position: absolute;
+}
+.containerHeader .logo .containerLogoMobile a .logoMobile {
+  width: 48.8px;
+}
+.containerHeader .logo .logoTitle {
+  background: #37383C;
+  position: absolute;
+  top: 52px;
+  left: 30px;
+  height: 15.4px;
+}
+.containerHeader .logo .bars {
+  position: absolute;
+  visibility: hidden;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 35px;
+}
+.containerHeader .logo .bars:checked ~ i.menu {
+  display: none;
+}
+.containerHeader .logo .bars:checked ~ i.closed {
+  display: block;
+}
+.containerHeader .logo .bars:checked ~ .linkBarMobile {
+  animation-name: move;
+  animation-duration: 1s;
+  left: 0;
+  right: 0;
+}
+.containerHeader .logo .bars:not(:checked) ~ .linkBarMobile {
+  left: -100%;
+}
+.containerHeader .logo .menuBar {
+  position: absolute;
+  width: 15px;
+  height: 14px;
+  right: 26px;
+  top: 35px;
+}
+.containerHeader .logo i {
+  height: 100%;
+  align-self: center;
+}
+.containerHeader .logo i.closed {
+  display: none;
+  font-size: 20px;
+  color: white;
+}
+.containerHeader .logo i.menu {
+  font-size: 17px;
+  color: white;
+}
+.containerHeader .logo .linkBarDesktop {
+  display: none;
+  font-size: 13px;
+}
+.containerHeader .logo .linkBarDesktop .link {
+  text-decoration: none;
+  color: white;
+}
+.containerHeader .logo .linkBarDesktop .link:hover::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #5ED7C6;
+}
+.containerHeader .logo .linkBarDesktop .link:active {
+  color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .link:active::after {
+  display: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton {
+  position: relative;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 1px;
+  border-color: white;
+  background-color: #37383C;
+  padding: 0;
+  outline: none;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .horizontal {
+  background-color: #37383C;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:hover ~ .vertical {
+  background-color: #37383C;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active {
+  background-color: #9CAFC3;
+  border-color: #9CAFC3;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .horizontal {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton button:active ~ .vertical {
+  background-color: white;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .horizontal {
+  position: absolute;
+  width: 18px;
+  height: 1px;
+  background-color: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.containerHeader .logo .linkBarDesktop .containerButton .vertical {
+  position: absolute;
+  width: 1.5px;
+  height: 18px;
+  background-color: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.containerCreateGif {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37383C;
+}
+.containerCreateGif img {
+  margin: 0px 0px 0px 156px;
+}
+.containerCreateGif .proyection {
+  width: 91px;
+  height: 151px;
+  background-image: linear-gradient(267deg, rgba(136, 243, 226, 0) 22%, #50E3C2 100%);
+}
+.containerCreateGif .proyection .topProyection {
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #37383C;
+}
+.containerCreateGif .proyection .bottomProyection {
+  width: 0;
+  height: 0;
+  margin: 32px 0px 0px;
+  border-top: 59px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 65px solid #37383C;
+}
+.containerCreateGif .containerSquare {
+  width: 688px;
+  border: solid;
+  border-width: 1px;
+  border-color: #572EE5;
+  margin: 4px 376px 24px 4px;
+}
+.containerCreateGif .containerSquare #displayVideo {
+  display: none;
+}
+.containerCreateGif .containerSquare .squareTop {
+  display: flex;
+  justify-content: space-between;
+}
+.containerCreateGif .containerSquare .squareTop .topLeft {
+  border-top: 1px solid #50E3C2;
+  border-left: 1px solid #50E3C2;
+  width: 27px;
+  height: 25px;
+  margin: 20px 0px 89px 20px;
+}
+.containerCreateGif .containerSquare .squareTop .topRigth {
+  border-top: 1px solid #50E3C2;
+  border-right: 1px solid #50E3C2;
+  width: 27px;
+  height: 25px;
+  margin: 20px 20px 89px 0px;
+}
+.containerCreateGif .containerSquare .title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 7px 45px 0px;
+}
+.containerCreateGif .containerSquare .title #containerVideo {
+  display: none;
+  width: 480px;
+  height: 340px;
+}
+.containerCreateGif .containerSquare .title #containerVideo .buttonsGif {
+  width: 32px;
+  height: 32px;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 2;
+  right: 0;
+}
+.containerCreateGif .containerSquare .title #containerVideo .buttonsGif i {
+  font-size: 17px;
+  color: #572EE5;
+}
+.containerCreateGif .containerSquare .title #containerVideo .buttonsGif:hover {
+  opacity: 1;
+}
+.containerCreateGif .containerSquare .title #containerVideo .buttonsGif.downloadButton {
+  margin: 12px 54px;
+}
+.containerCreateGif .containerSquare .title #containerVideo .buttonsGif.linkButton {
+  margin: 12px;
+}
+.containerCreateGif .containerSquare .title h1 {
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 550px;
+  justify-content: center;
+  padding: 0px 70px;
+}
+.containerCreateGif .containerSquare .title h1 .text {
+  padding-left: 32px;
+  padding-right: 6px;
+}
+.containerCreateGif .containerSquare .title h1 .gifos {
+  color: #5ED7C6;
+}
+.containerCreateGif .containerSquare .title h2 {
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  display: none;
+  flex-wrap: wrap;
+  width: 550px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 70px;
+}
+.containerCreateGif .containerSquare .title h2 .text {
+  padding-left: 32px;
+  padding-right: 6px;
+}
+.containerCreateGif .containerSquare .title .paragraph {
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 3px 110px 0px;
+  color: white;
+}
+.containerCreateGif .containerSquare .title .paragraph .waitPermission {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #changeText {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #changeText:checked ~ h1 {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #changeText:checked ~ h2 {
+  display: flex;
+}
+.containerCreateGif .containerSquare .title #changeText:checked ~ .paragraph > .initCreate {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #changeText:checked ~ .paragraph > .waitPermission {
+  display: flex;
+}
+.containerCreateGif .containerSquare .title #hiddenText {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #hiddenText:checked ~ h2 {
+  display: none;
+}
+.containerCreateGif .containerSquare .title #hiddenText:checked ~ .paragraph > .waitPermission {
+  display: none;
+}
+.containerCreateGif .containerSquare .squareBottom {
+  display: flex;
+  justify-content: space-between;
+}
+.containerCreateGif .containerSquare .squareBottom .bottomLeft {
+  border-bottom: 1px solid #50E3C2;
+  border-left: 1px solid #50E3C2;
+  width: 27px;
+  height: 25px;
+  margin: 0px 0px 20px 20px;
+}
+.containerCreateGif .containerSquare .squareBottom .bottomRigth {
+  border-bottom: 1px solid #50E3C2;
+  border-right: 1px solid #50E3C2;
+  width: 27px;
+  height: 25px;
+  margin: 0px 20px 20px 0px;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .squareTop .topLeft {
+  margin: 20px 0px 0px 20px;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .squareTop .topRigth {
+  margin: 20px 20px 0px 0px;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .title #containerVideo {
+  display: block;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .title #containerVideo .send {
+  display: none;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .title #containerVideo .text {
+  display: none;
+}
+.containerCreateGif .containerSquare #displayVideo:checked ~ .title .paragraph {
+  display: none;
+}
+.containerCreateGif .containerSquare #hoverDisplay {
+  display: none;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo {
+  position: relative;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 340px;
+  background-color: #572EE5;
+  opacity: 0.6;
+  left: 0;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo .send {
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo .send.loader {
+  display: block;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo .text {
+  font-size: 15px;
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  top: 67px;
+  left: 47px;
+  right: 0;
+  bottom: 0;
+  width: 234px;
+  height: 40px;
+}
+.containerCreateGif .containerSquare #hoverDisplay:checked ~ .title #containerVideo .text.weSendGif {
+  display: block;
+}
+.containerCreateGif .containerSquare #sucessful {
+  display: none;
+}
+.containerCreateGif .containerSquare #sucessful:checked ~ .title #containerVideo .buttonsGif {
+  display: block;
+}
+.containerCreateGif .containerSquare #sucessful:checked ~ .title #containerVideo .checkSend {
+  display: block;
+}
+.containerCreateGif .containerSquare #sucessful:checked ~ .title #containerVideo .sendSuccess {
+  display: block;
+}
+
+.containerPages {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #37383C;
+}
+.containerPages .options {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 795.9px;
+  justify-content: center;
+  margin: 0px 0px 0px 167px;
+}
+.containerPages .options .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  margin: 0px 26px 0px 0px;
+}
+.containerPages .options .page span {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+.containerPages .options .page.one {
+  margin: 0px 26px 0px 40px;
+}
+.containerPages .options #interval {
+  font-size: 15px;
+  font-weight: 700;
+  align-self: center;
+  position: absolute;
+  right: 61px;
+  top: 6px;
+}
+.containerPages .options .again {
+  font-size: 15px;
+  display: none;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  right: 61px;
+  top: 0px;
+}
+.containerPages .options .again.after::after {
+  content: "";
+  display: block;
+  width: 41px;
+  height: 0.1px;
+  margin: 0px auto;
+  background-color: #FFFFFF;
+  opacity: 0.4;
+}
+.containerPages .options .again:hover::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: #5ED7C6;
+  width: 143px;
+  margin: 0px auto;
+  opacity: 0.4;
+}
+.containerPages .options .again:active {
+  color: #9CAFC3;
+}
+.containerPages .options .division {
+  width: 100%;
+  height: 6.9px;
+  background-color: #572EE5;
+  border-radius: 6px;
+  margin: 19px 0px 0px;
+}
+.containerPages .options .button {
+  width: 127px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 20px 0px 26px;
+}
+.containerPages .options .button:hover {
+  background-color: white;
+  color: #37383C;
+}
+.containerPages .options .button.record {
+  display: none;
+}
+.containerPages .options .button.stop {
+  display: none;
+}
+.containerPages .options .button.send {
+  display: none;
+}
+.containerPages .options #changeOne {
+  display: none;
+}
+.containerPages .options #changeOne:checked ~ #one {
+  background-color: white;
+}
+.containerPages .options #changeOne:checked ~ #one span {
+  color: #37383C;
+}
+.containerPages .options #changeTwo {
+  display: none;
+}
+.containerPages .options #changeTwo:checked ~ #one {
+  background-color: #37383C;
+}
+.containerPages .options #changeTwo:checked ~ #one span {
+  color: white;
+}
+.containerPages .options #changeTwo:checked ~ #two {
+  background-color: white;
+}
+.containerPages .options #changeTwo:checked ~ #two span {
+  color: #37383C;
+}
+.containerPages .options #waitSend {
+  display: none;
+}
+.containerPages .options #waitSend:checked ~ #two {
+  background-color: #37383C;
+}
+.containerPages .options #waitSend:checked ~ #two span {
+  color: white;
+}
+.containerPages .options #waitSend:checked ~ #three {
+  background-color: white;
+}
+.containerPages .options #waitSend:checked ~ #three span {
+  color: #37383C;
+}
+.containerPages img {
+  align-self: flex-start;
+  margin: -50px;
+}
+.containerPages #changeParam {
+  display: none;
+}
+
+.containerFooter {
+  background-color: #37383C;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 47px 0px 0px;
+}
+.containerFooter .footerLeft span {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin: 0px 0px 22px;
+  color: white;
+}
+.containerFooter .footerLeft .margin {
+  margin: 0px 19px 0px 0px;
+}
+.containerFooter .footerLeft a i {
+  opacity: 0.2;
+  color: white;
+  font-size: 20px;
+}
+.containerFooter .footerLeft a i:hover {
+  color: white;
+  opacity: 1;
+}
+.containerFooter .footerRight {
+  margin: 46px 0px 23px;
+}
+.containerFooter .footerRight span {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+.containerFooter .end {
+  width: 100%;
+  height: 5px;
+  background-color: #000000;
+}
+
+@media (min-width: 768px) {
+  .containerHeader .logo {
+    padding: 18px 70px 12.9px;
+  }
+  .containerHeader .logo .containerLogoMobile {
+    display: none;
+  }
+  .containerHeader .logo .containerLogoDesktop {
+    display: block;
+  }
+  .containerHeader .logo .containerLogoDesktop a .logoDesktop {
+    width: 59.1px;
+    left: -266px;
+  }
+  .containerHeader .logo .logoTitle {
+    font-size: 18px;
+    top: 48px;
+    left: 82px;
+    height: 20.1px;
+  }
+  .containerHeader .logo .bars {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo .menuBar {
+    width: 20px;
+    height: 22px;
+    right: 70px;
+    top: 38px;
+  }
+  .containerHeader .logo i.menu {
+    font-size: 22px;
+  }
+  .containerHeader .logo i.closed {
+    font-size: 29px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    top: 92.18px;
+  }
+
+  .containerFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 49.5px 0px 0px;
+  }
+  .containerFooter .footerLeft {
+    display: flex;
+    margin: 0px 0px 0px 80px;
+  }
+  .containerFooter .footerLeft span {
+    margin: 0px 19px 0px 0px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 80px 0px 0px;
+  }
+  .containerFooter .end {
+    margin: 51.5px 0px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .containerHeader .logo {
+    padding: 18px 156px 12.9px;
+  }
+  .containerHeader .logo .containerLogoDesktop a .logoDesktop {
+    left: -286px;
+  }
+  .containerHeader .logo .logoTitle {
+    left: 168px;
+  }
+  .containerHeader .logo .bars:checked ~ i.closed {
+    display: none;
+  }
+  .containerHeader .logo i.menu {
+    display: none;
+  }
+  .containerHeader .logo i.closed {
+    display: none;
+  }
+  .containerHeader .logo .linkBarDesktop {
+    display: flex;
+    align-items: center;
+  }
+  .containerHeader .logo .linkBarDesktop .link {
+    text-transform: uppercase;
+  }
+  .containerHeader .logo .linkBarDesktop .link#nocturnalDesktop {
+    margin: 0px 41.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#favoritesDesktop {
+    margin: 0px 50px 0px 0px;
+  }
+  .containerHeader .logo .linkBarDesktop .link#gifosDesktop {
+    margin: 0px 59.5px 0px 0px;
+  }
+  .containerHeader .logo .linkBarMobile {
+    display: none;
+  }
+
+  .containerFooter .footerLeft {
+    margin: 0px 0px 0px 156px;
+  }
+  .containerFooter .footerRight {
+    margin: 0px 158px 0px 0px;
+  }
+}
+
+/*# sourceMappingURL=createGifDarkMode.css.map */
