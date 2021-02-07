@@ -5,6 +5,7 @@ var buttonRecord = document.getElementById("buttonRecord");
 var buttonStop = document.getElementById("buttonStop");
 var buttonSend = document.getElementById("buttonSend");
 var downloadButton = document.getElementById("downloadButton");
+var linkButton = document.getElementById("linkButton");
 var objectURL;
 const constrain = {
     audio: false,
@@ -47,7 +48,8 @@ buttonSend.addEventListener("click",() =>{
     sendGif();
 });
 
-downloadButton.addEventListener("click",()=>{download()})
+downloadButton.addEventListener("click",()=>{download()});
+linkButton.addEventListener("click",()=>{copyLink();})
 
 class informationGifs {
     constructor (id,title,user,url,original){
@@ -260,4 +262,14 @@ function getData (dataGif){
     info.push(source);
     info.push(original);
     return info;
+}
+
+function copyLink(){
+    let url = arrayMyGifs[0].original;
+    let aux = document.createElement("input");
+    aux.value = url;
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
 }

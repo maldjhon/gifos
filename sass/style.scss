@@ -404,12 +404,16 @@
         line-height: 25px;
         margin: 0px 0px 2px;
     }
-    span{
+    .span{
         @extend .linkTextDesktop;
         font-weight: 500;
         font-size: 14px;
         line-height: 25px;
         text-align: center;
+        .linkTerm{
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -844,8 +848,9 @@
             margin: 0px 0px 7px;
             font-size: 18px;
         }
-        span{
+        .span{
             font-size: 16px;
+            padding: 18px 70px 12.9px;
         }
     }
     #containerSearchGifos{
@@ -981,6 +986,11 @@
         h1{
             font-size: 35px;
             line-height: 50px;
+        }
+    }
+    .containerTrending{
+        .span{
+            padding: 18px 156px 12.9px;
         }
     }
     #containerSearchGifos{

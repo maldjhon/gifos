@@ -12,6 +12,7 @@ var optionThird = document.getElementById("suggestionThird");
 var optionFourth = document.getElementById("suggestionFourth");
 var seeMore = document.getElementById("containerSearchGifos");
 var createGif = document.getElementById("create");
+var searchTermsGifs = document.getElementById("searTermTrendings");
 var arrayGifs = new Array();
 var arrayAllGifs = new Array();
 var offSet = 0;
@@ -40,7 +41,7 @@ optionFourth.addEventListener("click",(event) =>{setQueryGifos(event)});
 seeMore.addEventListener("click",(event) => {
     let idButton = event.target.id;
     if (idButton == "seeMore"){
-        let value = document.getElementById("queryGifos").value;
+        let value = event.path[1].firstElementChild.innerText;
         searchSeeMore (value);
     }else{
         iconsGif(event);
@@ -48,6 +49,7 @@ seeMore.addEventListener("click",(event) => {
 });
 containerGifsTreding.addEventListener("click",(event)=>{iconsGif(event);})
 createGif.addEventListener("click",()=>{goViewCreateGif();});
+searchTermsGifs.addEventListener("click",(event)=>{querySuggestion(event);})
 
 class informationGifs {
     constructor (id,title,user,url,original){
@@ -71,6 +73,20 @@ async function gifTreding(){
     return data;
 }
 
+async function gifSearchTermTreding(){
+    let url = `https://api.giphy.com/v1/trending/searches?api_key=${apyKey}`;
+    const resp = await fetch (url);
+    const data = await resp.json();
+    return data;
+}
+
+async function gifTermTreding(value){
+    let url = `api.giphy.com/v1/tags/related?api_key=${apyKey}&term=${value}`;
+    const resp = await fetch (url);
+    const data = await resp.json();
+    return data;
+}
+
 async function queryAutocomplete(valueInput){
     let url = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apyKey}&q=${valueInput}&limit=4&offset=0&rating=g`;
     const resp = await fetch (url);
@@ -88,6 +104,13 @@ async function searchGifos(value){
 let gifTredingHome = gifTreding();
 gifTredingHome.then(data =>
     {infoTreding(data);
+}).catch(err => 
+    {console.error(err);
+});
+
+let gifTredingTermsHome = gifSearchTermTreding();
+gifTredingTermsHome.then(data =>
+    {gifTredingTerms(data);
 }).catch(err => 
     {console.error(err);
 });
@@ -194,6 +217,27 @@ function addGifTreding(arrayGifs,contador){
         user.innerText = arrayGifs[contador].user;
         title.innerText = arrayGifs[contador].title;
     }
+}
+
+function gifTredingTerms(data){
+    let searchTerm = document.getElementById("searTermTrendings");
+    let dataTerms = data.data;
+    let conc = "";
+    let count = 0;
+    let html;
+    let i;
+    for (i in dataTerms){
+        let term = dataTerms[i];
+        count = count + 1;
+        html = `<span class="linkTerm" id="term_${count}">${term}</span>`;
+        if (count != dataTerms.length){
+            html = html+", ";
+        }else{
+            html = html;
+        }
+        conc = conc + html;
+    }
+    searchTerm.innerHTML = conc;    
 }
 
 function sendSearch(){
@@ -677,4 +721,10 @@ function goViewCreateGif(){
             a.href = "./html/createGif.html";
         }
         a.click();
+}
+
+function querySuggestion(event){
+    let value = event.srcElement.innerText;
+    deletesNodes();
+    search (value);
 }

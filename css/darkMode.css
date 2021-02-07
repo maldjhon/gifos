@@ -19,7 +19,7 @@
   text-decoration: none;
 }
 
-.linkTextDesktop, .containerTredingGifos h4, #containerSearchGifos .seeMore, #containerSearchGifos h3, .containerTrending span, .containerTrending h2, .containerTitle h1, .containerHeader .logo .linkBarDesktop {
+.linkTextDesktop, .containerTredingGifos h4, #containerSearchGifos .seeMore, #containerSearchGifos h3, .containerTrending .span, .containerTrending h2, .containerTitle h1, .containerHeader .logo .linkBarDesktop {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   color: white;
@@ -391,11 +391,15 @@
   line-height: 25px;
   margin: 0px 0px 2px;
 }
-.containerTrending span {
+.containerTrending .span {
   font-weight: 500;
   font-size: 14px;
   line-height: 25px;
   text-align: center;
+}
+.containerTrending .span .linkTerm {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 #containerSearchGifos {
@@ -826,8 +830,9 @@
     margin: 0px 0px 7px;
     font-size: 18px;
   }
-  .containerTrending span {
+  .containerTrending .span {
     font-size: 16px;
+    padding: 18px 70px 12.9px;
   }
 
   #containerSearchGifos {
@@ -950,6 +955,10 @@
     font-size: 35px;
     line-height: 50px;
     padding: 0px 155px;
+  }
+
+  .containerTrending .span {
+    padding: 18px 156px 12.9px;
   }
 
   #containerSearchGifos {
